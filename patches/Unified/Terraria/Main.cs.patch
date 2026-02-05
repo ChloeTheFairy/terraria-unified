@@ -4915,7 +4915,7 @@
 +				}
 +				*/
 +
-+				var t = tile.UnsafeGet(x, y);
++				var t = tile[x, y];
 +				byte brightness = lightingCache[idx];
 +
 +				bool hasFullWater = LiquidRenderer.Instance.HasFullWater(x, y);
