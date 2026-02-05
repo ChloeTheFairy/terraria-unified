@@ -8,7 +8,7 @@
  
  namespace Terraria;
  
-@@ -791,11 +_,30 @@
+@@ -794,11 +_,30 @@
  
  					if (number2 == 1f) {
  						string text3 = text.ToString();
@@ -39,7 +39,7 @@
  					}
  
  					writer.Write((short)number);
-@@ -1720,11 +_,11 @@
+@@ -1723,11 +_,11 @@
  		int num6 = 0;
  		byte b = 0;
  		byte[] array = new byte[16];
@@ -53,7 +53,7 @@
  					num4 = (short)(num4 + 1);
  					continue;
  				}
-@@ -2002,16 +_,19 @@
+@@ -2005,16 +_,19 @@
  
  	public static void DecompressTileBlock_Inner(BinaryReader reader, int xStart, int yStart, int width, int height)
  	{
