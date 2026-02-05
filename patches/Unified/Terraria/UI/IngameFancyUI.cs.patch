@@ -1,0 +1,19 @@
+--- src/TerrariaNetCore/Terraria/UI/IngameFancyUI.cs
++++ src/Unified/Terraria/UI/IngameFancyUI.cs
+@@ -6,6 +_,7 @@
+ using Terraria.GameInput;
+ using Terraria.Localization;
+ using Terraria.UI.Gamepad;
++using Terraria.Unified.Patches;
+ 
+ namespace Terraria.UI;
+ 
+@@ -129,7 +_,7 @@
+ 				}, delegate {
+ 					ChestUI.RenameChestCancel();
+ 					Close(quiet: true);
+-				}, keyboardContext));
++				}, keyboardContext, maxLength: ChestNameLengthExtender.PreferredMaxChestNameLength));
+ 				break;
+ 		}
+ 

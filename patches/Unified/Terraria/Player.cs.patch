@@ -1,6 +1,6 @@
 --- src/TerrariaNetCore/Terraria/Player.cs
 +++ src/Unified/Terraria/Player.cs
-@@ -17621,7 +_,7 @@
+@@ -17624,7 +_,7 @@
  			Hurt(PlayerDeathReason.LegacyDefault(), attackDamage_ScaledByDifficulty, Main.npc[Main.wofNPCIndex].direction);
  		}
  
@@ -9,7 +9,7 @@
  			AddBuff(37, 10);
  			SoundEngine.PlaySound(4, (int)Main.npc[Main.wofNPCIndex].position.X, (int)Main.npc[Main.wofNPCIndex].position.Y, 10);
  		}
-@@ -18821,7 +_,7 @@
+@@ -18824,7 +_,7 @@
  
  	public static Tile GetFloorTile(int x, int y)
  	{
@@ -18,7 +18,7 @@
  		if (Main.tile[x - 1, y] == null)
  			Main.tile[x - 1, y] = new Tile();
  
-@@ -18841,7 +_,11 @@
+@@ -18844,7 +_,11 @@
  		return result;
  	}
  
@@ -30,7 +30,7 @@
  
  	private void MakeFloorDust(bool Falling, int type, int frameX, int frameY, int paintColor)
  	{
-@@ -19429,6 +_,8 @@
+@@ -19432,6 +_,8 @@
  		if (whoAmI != Main.myPlayer) {
  			int num2 = (int)(position.X + (float)(width / 2)) / 16;
  			int num3 = (int)(position.Y + (float)(height / 2)) / 16;
@@ -39,7 +39,7 @@
  			if (!WorldGen.InWorld(num2, num3, 4))
  				flag = true;
  			else if (Main.tile[num2, num3] == null)
-@@ -19441,6 +_,10 @@
+@@ -19444,6 +_,10 @@
  				flag = true;
  			else if (Main.tile[num2, num3 + 3] == null)
  				flag = true;
@@ -50,7 +50,7 @@
  
  			if (flag) {
  				outOfRange = true;
-@@ -33812,8 +_,8 @@
+@@ -33818,8 +_,8 @@
  	public void HorsemansBlade_SpawnPumpkin(int npcIndex, int dmg, float kb)
  	{
  		Vector2 center = Main.npc[npcIndex].Center;
@@ -61,7 +61,7 @@
  		int num = Main.rand.Next(100, 300);
  		int num2 = Main.rand.Next(100, 300);
  		num = ((Main.rand.Next(2) != 0) ? (num + (x / 2 - num)) : (num - (x / 2 + num)));
-@@ -36618,7 +_,7 @@
+@@ -36624,7 +_,7 @@
  
  	public void LimitPointToPlayerReachableArea(ref Vector2 pointPosition)
  	{

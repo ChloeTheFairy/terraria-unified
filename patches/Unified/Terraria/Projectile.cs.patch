@@ -1,6 +1,6 @@
 --- src/TerrariaNetCore/Terraria/Projectile.cs
 +++ src/Unified/Terraria/Projectile.cs
-@@ -12825,7 +_,7 @@
+@@ -12823,7 +_,7 @@
  		if (localAI[0] == 1f && GetStormLightningExplosionRect().Intersects(targetRect))
  			return true;
  
@@ -9,7 +9,7 @@
  			return true;
  
  		if (_lightningCollisionBounds != null && _lightningCollisionBounds.Intersects(targetRect))
-@@ -16033,7 +_,7 @@
+@@ -16029,7 +_,7 @@
  	{
  		byte b = Player.FindClosest(position, width, height);
  		closestPlayer = Main.player[b];
@@ -18,7 +18,7 @@
  		closeToMe = Utils.CenteredRectangle(base.Center, new Vector2(300f, 150f));
  	}
  
-@@ -41778,10 +_,12 @@
+@@ -41787,10 +_,12 @@
  		int num2 = 2;
  		int num3 = 0;
  		while (num3 <= num) {
@@ -33,7 +33,7 @@
  
  			if (WorldGen.ActiveAndWalkableTile(p.X, p.Y)) {
  				Vector2 vector = p.ToWorldCoordinates(8f, 0f);
-@@ -63734,7 +_,7 @@
+@@ -63743,7 +_,7 @@
  
  					if (type == 109) {
  						int num1109 = Player.FindClosest(position, width, height);

@@ -1,5 +1,13 @@
 --- src/TerrariaNetCore/Terraria/MessageBuffer.cs
 +++ src/Unified/Terraria/MessageBuffer.cs
+@@ -21,6 +_,7 @@
+ using Terraria.Net.Sockets;
+ using Terraria.Testing;
+ using Terraria.UI;
++using Terraria.Unified.Patches;
+ 
+ namespace Terraria;
+ 
 @@ -1127,7 +_,7 @@
  				BitsByte bitsByte5 = (byte)0;
  				BitsByte bitsByte6 = (byte)0;
@@ -9,6 +17,26 @@
  				for (int l = num62; l < num62 + num64; l++) {
  					for (int m = num63; m < num63 + num65; m++) {
  						if (Main.tile[l, m] == null)
+@@ -1652,10 +_,19 @@
+ 				int num43 = reader.ReadByte();
+ 				string name = string.Empty;
+ 				if (num43 != 0) {
++					/*
+ 					if (num43 <= 20)
+ 						name = reader.ReadString();
+ 					else if (num43 != 255)
+ 						num43 = 0;
++					*/
++
++					if (num43 <= ChestNameLengthExtender.PreferredMaxChestNameLength) {
++						name = reader.ReadString();
++					}
++					else if (num43 != 255) {
++						num43 = 0;
++					}
+ 				}
+ 
+ 				if (Main.netMode == 1) {
 @@ -2064,7 +_,7 @@
  				if (Main.tile[num14, num15] == null)
  					Main.tile[num14, num15] = new Tile();

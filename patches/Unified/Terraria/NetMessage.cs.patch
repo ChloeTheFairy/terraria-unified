@@ -1,5 +1,44 @@
 --- src/TerrariaNetCore/Terraria/NetMessage.cs
 +++ src/Unified/Terraria/NetMessage.cs
+@@ -14,6 +_,7 @@
+ using Terraria.Map;
+ using Terraria.Social;
+ using Terraria.Testing;
++using Terraria.Unified.Patches;
+ 
+ namespace Terraria;
+ 
+@@ -791,11 +_,30 @@
+ 
+ 					if (number2 == 1f) {
+ 						string text3 = text.ToString();
++
++						/*
+ 						num10 = (byte)text3.Length;
+ 						if (num10 == 0 || num10 > 20)
+ 							num10 = 255;
+ 						else
+ 							text2 = text3;
++						*/
++
++						num10 = (byte)Math.Clamp(text3.Length, 0, 255);
++						if (num10 == 0 || num10 > ChestNameLengthExtender.VanillaMaxChestNameLength) {
++							if (num10 > ChestNameLengthExtender.ModdedMaxChestNameLength) {
++								num10 = byte.MaxValue;
++							}
++							else if (ChestNameLengthExtender.BypassServerNameLengthChecks) {
++								// Clamp the actual length if we want to bypass
++								// name checks, since the length is useless.
++								num10 = ChestNameLengthExtender.VanillaMaxChestNameLength;
++							}
++						}
++
++						if (num10 != byte.MaxValue) {
++							text2 = text3;
++						}
+ 					}
+ 
+ 					writer.Write((short)number);
 @@ -1720,11 +_,11 @@
  		int num6 = 0;
  		byte b = 0;
