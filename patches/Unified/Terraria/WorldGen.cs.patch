@@ -1,5 +1,26 @@
 --- src/TerrariaNetCore/Terraria/WorldGen.cs
 +++ src/Unified/Terraria/WorldGen.cs
+@@ -1,10 +_,12 @@
+ using System;
+ using System.Collections.Generic;
++using System.Diagnostics;
+ using System.IO;
+ using System.Linq;
+ using System.Text.RegularExpressions;
+ using System.Threading;
+ using System.Threading.Tasks;
++using Microsoft.Extensions.Logging;
+ using Microsoft.Xna.Framework;
+ using ReLogic.Utilities;
+ using Terraria.Audio;
+@@ -30,6 +_,7 @@
+ using Terraria.ObjectData;
+ using Terraria.Testing;
+ using Terraria.UI;
++using Terraria.Unified.Startup;
+ using Terraria.Utilities;
+ using Terraria.WorldBuilding;
+ 
 @@ -768,6 +_,7 @@
  					continue;
  				}
@@ -152,6 +173,23 @@
  
  		for (int n = 0; n < Main.countsAsHostForGameplay.Length; n++) {
  			Main.countsAsHostForGameplay[n] = false;
+@@ -9210,6 +_,7 @@
+ 		generatingWorldOnThisThread = true;
+ 		bool flag = false;
+ 		try {
++			var sw = Stopwatch.StartNew();
+ 			Console.WriteLine("Creating world - Seed: {0}, Width: {1}, Height: {2}, Evil: {3}, Difficulty: {4}", Main.ActiveWorldFileData.SeedText, Main.maxTilesX, Main.maxTilesY, WorldGenParam_Evil, Main.GameMode);
+ 			GenVars.configuration = WorldGenConfiguration.FromEmbeddedPath("Terraria.GameContent.WorldBuilding.Configuration.json");
+ 			Hooks.ProcessWorldGenConfig(ref GenVars.configuration);
+@@ -9219,6 +_,8 @@
+ 			AddPasses();
+ 			DisablePassesForSpecialSeeds(_generator._passes);
+ 			flag = _generator.GenerateWorld();
++			sw.Stop();
++			GameLaunch.Instance.GameLogger.LogInformation($"Generated world in: {sw.Elapsed.TotalSeconds}");
+ 			Finish();
+ 			return flag;
+ 		}
 @@ -19628,7 +_,9 @@
  			}
  
