@@ -1,4 +1,4 @@
---- src/TerrariaNetCore/Terraria/Graphics/Light/LegacyLighting.cs
+--- src/Unified_Staging/Terraria/Graphics/Light/LegacyLighting.cs
 +++ src/Unified/Terraria/Graphics/Light/LegacyLighting.cs
 @@ -133,6 +_,9 @@
  	private static FastRandom _swipeRandom = FastRandom.CreateWithRandomSeed();

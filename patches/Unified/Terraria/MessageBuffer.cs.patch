@@ -1,4 +1,4 @@
---- src/TerrariaNetCore/Terraria/MessageBuffer.cs
+--- src/Unified_Staging/Terraria/MessageBuffer.cs
 +++ src/Unified/Terraria/MessageBuffer.cs
 @@ -21,6 +_,7 @@
  using Terraria.Net.Sockets;

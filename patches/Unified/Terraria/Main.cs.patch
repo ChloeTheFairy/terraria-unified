@@ -1,4 +1,4 @@
---- src/TerrariaNetCore/Terraria/Main.cs
+--- src/Unified_Staging/Terraria/Main.cs
 +++ src/Unified/Terraria/Main.cs
 @@ -3,16 +_,17 @@
  using System.Collections.Concurrent;

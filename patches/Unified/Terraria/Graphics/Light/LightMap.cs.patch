@@ -1,4 +1,4 @@
---- src/TerrariaNetCore/Terraria/Graphics/Light/LightMap.cs
+--- src/Unified_Staging/Terraria/Graphics/Light/LightMap.cs
 +++ src/Unified/Terraria/Graphics/Light/LightMap.cs
 @@ -1,12 +_,25 @@
 -using Microsoft.Xna.Framework;

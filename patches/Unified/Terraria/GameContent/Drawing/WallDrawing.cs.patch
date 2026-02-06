@@ -1,4 +1,4 @@
---- src/TerrariaNetCore/Terraria/GameContent/Drawing/WallDrawing.cs
+--- src/Unified_Staging/Terraria/GameContent/Drawing/WallDrawing.cs
 +++ src/Unified/Terraria/GameContent/Drawing/WallDrawing.cs
 @@ -11,7 +_,7 @@
  {

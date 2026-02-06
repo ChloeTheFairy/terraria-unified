@@ -1,4 +1,4 @@
---- src/TerrariaNetCore/Terraria/NPC.cs
+--- src/Unified_Staging/Terraria/NPC.cs
 +++ src/Unified/Terraria/NPC.cs
 @@ -4255,8 +_,8 @@
  

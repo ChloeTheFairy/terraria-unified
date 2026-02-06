@@ -1,4 +1,4 @@
---- src/TerrariaNetCore/Terraria/Testing/DebugOptions.cs
+--- src/Unified_Staging/Terraria/Testing/DebugOptions.cs
 +++ src/Unified/Terraria/Testing/DebugOptions.cs
 @@ -5,7 +_,7 @@
  

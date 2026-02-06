@@ -1,4 +1,4 @@
---- src/TerrariaNetCore/ReLogic/OS/Windows/WindowService.cs
+--- src/Unified_Staging/ReLogic/OS/Windows/WindowService.cs
 +++ src/Unified/ReLogic/OS/Windows/WindowService.cs
 @@ -81,10 +_,10 @@
  		((Form)Control.FromHandle(window.Handle)).Location = new System.Drawing.Point(x, y);

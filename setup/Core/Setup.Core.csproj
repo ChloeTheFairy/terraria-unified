@@ -32,6 +32,10 @@
 		<PackageReference Include="ICSharpCode.Decompiler" Version="8.0.0.7106-preview2" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Unified\" />
+	</ItemGroup>
+
 	<PropertyGroup>
 		<WeaverConfiguration>
 			<Weavers>

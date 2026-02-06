@@ -88,6 +88,14 @@ namespace Terraria.ModLoader.Setup.Core
 				DeleteFile(patchPath);
 				return;
 			}
+
+			if (parameters.FromDirOverride is not null) {
+				patchFile.basePath = patchFile.basePath.Replace(parameters.BaseDir, parameters.FromDirOverride);
+			}
+
+			if (parameters.ToDirOverride is not null) {
+				patchFile.patchedPath = patchFile.patchedPath.Replace(parameters.PatchedDir, parameters.ToDirOverride);
+			}
 			
 			CreateParentDirectory(patchPath);
 			File.WriteAllText(patchPath, patchFile.ToString(true));

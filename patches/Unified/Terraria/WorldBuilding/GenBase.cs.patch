@@ -1,4 +1,4 @@
---- src/TerrariaNetCore/Terraria/WorldBuilding/GenBase.cs
+--- src/Unified_Staging/Terraria/WorldBuilding/GenBase.cs
 +++ src/Unified/Terraria/WorldBuilding/GenBase.cs
 @@ -8,7 +_,7 @@
  

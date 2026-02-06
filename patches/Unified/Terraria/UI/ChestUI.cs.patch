@@ -1,4 +1,4 @@
---- src/TerrariaNetCore/Terraria/UI/ChestUI.cs
+--- src/Unified_Staging/Terraria/UI/ChestUI.cs
 +++ src/Unified/Terraria/UI/ChestUI.cs
 @@ -119,7 +_,10 @@
  		Vector2 vector = new Vector2(504f, Main.instance.invBottom);

@@ -1,4 +1,4 @@
---- src/TerrariaNetCore/Terraria/Utils.cs
+--- src/Unified_Staging/Terraria/Utils.cs
 +++ src/Unified/Terraria/Utils.cs
 @@ -1101,7 +_,7 @@
  	public static Vector2D TopRightDouble(this Rectangle r) => new Vector2D(r.X + r.Width, r.Y);

@@ -1,4 +1,4 @@
---- src/TerrariaNetCore/Terraria/Graphics/Light/ILightingEngine.cs
+--- src/Unified_Staging/Terraria/Graphics/Light/ILightingEngine.cs
 +++ src/Unified/Terraria/Graphics/Light/ILightingEngine.cs
 @@ -10,7 +_,13 @@
  

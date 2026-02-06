@@ -1,4 +1,4 @@
---- src/TerrariaNetCore/Terraria/GameContent/Biomes/CaveHouse/HouseBuilder.cs
+--- src/Unified_Staging/Terraria/GameContent/Biomes/CaveHouse/HouseBuilder.cs
 +++ src/Unified/Terraria/GameContent/Biomes/CaveHouse/HouseBuilder.cs
 @@ -61,7 +_,7 @@
  

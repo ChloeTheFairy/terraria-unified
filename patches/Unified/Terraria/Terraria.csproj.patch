@@ -1,4 +1,4 @@
---- src/TerrariaNetCore/Terraria/Terraria.csproj
+--- src/Unified_Staging/Terraria/Terraria.csproj
 +++ src/Unified/Terraria/Terraria.csproj
 @@ -14,9 +_,7 @@
  		<AssemblyName>Terraria</AssemblyName>

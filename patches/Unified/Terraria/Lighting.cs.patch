@@ -1,4 +1,4 @@
---- src/TerrariaNetCore/Terraria/Lighting.cs
+--- src/Unified_Staging/Terraria/Lighting.cs
 +++ src/Unified/Terraria/Lighting.cs
 @@ -3,11 +_,38 @@
  using Terraria.Graphics;

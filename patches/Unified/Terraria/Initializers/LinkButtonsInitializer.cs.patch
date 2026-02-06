@@ -1,4 +1,4 @@
---- src/TerrariaNetCore/Terraria/Initializers/LinkButtonsInitializer.cs
+--- src/Unified_Staging/Terraria/Initializers/LinkButtonsInitializer.cs
 +++ src/Unified/Terraria/Initializers/LinkButtonsInitializer.cs
 @@ -3,6 +_,7 @@
  using Microsoft.Xna.Framework.Graphics;

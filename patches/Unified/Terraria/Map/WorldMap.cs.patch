@@ -1,4 +1,4 @@
---- src/TerrariaNetCore/Terraria/Map/WorldMap.cs
+--- src/Unified_Staging/Terraria/Map/WorldMap.cs
 +++ src/Unified/Terraria/Map/WorldMap.cs
 @@ -1,3 +_,4 @@
 +/*
