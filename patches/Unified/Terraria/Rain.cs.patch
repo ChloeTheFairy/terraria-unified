@@ -1,4 +1,4 @@
---- src/Unified_Staging/Terraria/Rain.cs
+--- src/TerrariaNetCore/Terraria/Rain.cs
 +++ src/Unified/Terraria/Rain.cs
 @@ -25,7 +_,7 @@
  		if (Main.netMode == 2 || Main.gamePaused || Main.gameMenu || !Main.SceneMetrics.ZoneRain || Main.shimmerAlpha > 0f)

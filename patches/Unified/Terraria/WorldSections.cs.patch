@@ -1,4 +1,4 @@
---- src/Unified_Staging/Terraria/WorldSections.cs
+--- src/TerrariaNetCore/Terraria/WorldSections.cs
 +++ src/Unified/Terraria/WorldSections.cs
 @@ -83,6 +_,24 @@
  

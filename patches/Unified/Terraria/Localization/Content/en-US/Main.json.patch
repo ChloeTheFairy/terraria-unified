@@ -1,4 +1,4 @@
---- src/Unified_Staging/Terraria/Localization/Content/en-US/Main.json
+--- src/TerrariaNetCore/Terraria/Localization/Content/en-US/Main.json
 +++ src/Unified/Terraria/Localization/Content/en-US/Main.json
 @@ -3740,6 +_,8 @@
  		"Twitter": "Twitter",

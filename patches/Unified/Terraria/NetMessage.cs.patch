@@ -1,4 +1,4 @@
---- src/Unified_Staging/Terraria/NetMessage.cs
+--- src/TerrariaNetCore/Terraria/NetMessage.cs
 +++ src/Unified/Terraria/NetMessage.cs
 @@ -14,6 +_,7 @@
  using Terraria.Map;

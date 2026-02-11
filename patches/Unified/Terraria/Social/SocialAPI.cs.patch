@@ -1,4 +1,4 @@
---- src/Unified_Staging/Terraria/Social/SocialAPI.cs
+--- src/TerrariaNetCore/Terraria/Social/SocialAPI.cs
 +++ src/Unified/Terraria/Social/SocialAPI.cs
 @@ -1,9 +_,11 @@
  using System;

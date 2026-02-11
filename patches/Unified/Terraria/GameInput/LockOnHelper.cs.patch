@@ -1,4 +1,4 @@
---- src/Unified_Staging/Terraria/GameInput/LockOnHelper.cs
+--- src/TerrariaNetCore/Terraria/GameInput/LockOnHelper.cs
 +++ src/Unified/Terraria/GameInput/LockOnHelper.cs
 @@ -282,7 +_,7 @@
  	private static void RefreshTargets(Vector2 position, float radius)

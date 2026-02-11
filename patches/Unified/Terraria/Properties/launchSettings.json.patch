@@ -1,4 +1,4 @@
---- src/Unified_Staging/Terraria/Properties/launchSettings.json
+--- src/TerrariaNetCore/Terraria/Properties/launchSettings.json
 +++ src/Unified/Terraria/Properties/launchSettings.json
 @@ -1,15 +_,11 @@
  {

@@ -1,4 +1,4 @@
---- src/Unified_Staging/Terraria/UI/IngameFancyUI.cs
+--- src/TerrariaNetCore/Terraria/UI/IngameFancyUI.cs
 +++ src/Unified/Terraria/UI/IngameFancyUI.cs
 @@ -6,6 +_,7 @@
  using Terraria.GameInput;

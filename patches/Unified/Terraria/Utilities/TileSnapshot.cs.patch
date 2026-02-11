@@ -1,4 +1,4 @@
---- src/Unified_Staging/Terraria/Utilities/TileSnapshot.cs
+--- src/TerrariaNetCore/Terraria/Utilities/TileSnapshot.cs
 +++ src/Unified/Terraria/Utilities/TileSnapshot.cs
 @@ -48,10 +_,19 @@
  			TileStruct result = default(TileStruct);

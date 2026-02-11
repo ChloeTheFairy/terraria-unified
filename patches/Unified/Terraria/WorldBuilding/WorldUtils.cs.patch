@@ -1,4 +1,4 @@
---- src/Unified_Staging/Terraria/WorldBuilding/WorldUtils.cs
+--- src/TerrariaNetCore/Terraria/WorldBuilding/WorldUtils.cs
 +++ src/Unified/Terraria/WorldBuilding/WorldUtils.cs
 @@ -100,10 +_,12 @@
  		Point point = start;

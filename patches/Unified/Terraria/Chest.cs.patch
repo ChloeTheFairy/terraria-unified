@@ -1,4 +1,4 @@
---- src/Unified_Staging/Terraria/Chest.cs
+--- src/TerrariaNetCore/Terraria/Chest.cs
 +++ src/Unified/Terraria/Chest.cs
 @@ -319,7 +_,9 @@
  				Tile tileSafely2 = Framing.GetTileSafely(i, j);

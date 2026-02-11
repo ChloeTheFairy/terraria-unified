@@ -1,4 +1,4 @@
---- src/Unified_Staging/Terraria/GameContent/Drawing/TileDrawing.cs
+--- src/TerrariaNetCore/Terraria/GameContent/Drawing/TileDrawing.cs
 +++ src/Unified/Terraria/GameContent/Drawing/TileDrawing.cs
 @@ -426,8 +_,17 @@
  			TileType = -1

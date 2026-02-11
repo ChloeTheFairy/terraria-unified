@@ -1,4 +1,4 @@
---- src/Unified_Staging/Terraria/Graphics/Capture/CaptureCamera.cs
+--- src/TerrariaNetCore/Terraria/Graphics/Capture/CaptureCamera.cs
 +++ src/Unified/Terraria/Graphics/Capture/CaptureCamera.cs
 @@ -20,10 +_,10 @@
  

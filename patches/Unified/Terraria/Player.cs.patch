@@ -1,4 +1,4 @@
---- src/Unified_Staging/Terraria/Player.cs
+--- src/TerrariaNetCore/Terraria/Player.cs
 +++ src/Unified/Terraria/Player.cs
 @@ -17616,7 +_,7 @@
  			Hurt(PlayerDeathReason.LegacyDefault(), attackDamage_ScaledByDifficulty, Main.npc[Main.wofNPCIndex].direction);

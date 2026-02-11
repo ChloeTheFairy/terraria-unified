@@ -1,4 +1,4 @@
---- src/Unified_Staging/Terraria/GameContent/Liquid/LiquidRenderer.cs
+--- src/TerrariaNetCore/Terraria/GameContent/Liquid/LiquidRenderer.cs
 +++ src/Unified/Terraria/GameContent/Liquid/LiquidRenderer.cs
 @@ -10,7 +_,7 @@
  

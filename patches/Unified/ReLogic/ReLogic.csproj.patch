@@ -1,4 +1,4 @@
---- src/Unified_Staging/ReLogic/ReLogic.csproj
+--- src/TerrariaNetCore/ReLogic/ReLogic.csproj
 +++ src/Unified/ReLogic/ReLogic.csproj
 @@ -1,5 +_,7 @@
  <Project Sdk="Microsoft.NET.Sdk">

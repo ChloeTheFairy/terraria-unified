@@ -1,4 +1,4 @@
---- src/Unified_Staging/Terraria/GameContent/PlayerSittingHelper.cs
+--- src/TerrariaNetCore/Terraria/GameContent/PlayerSittingHelper.cs
 +++ src/Unified/Terraria/GameContent/PlayerSittingHelper.cs
 @@ -27,7 +_,7 @@
  

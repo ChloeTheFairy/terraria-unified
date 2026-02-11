@@ -10,10 +10,6 @@ public sealed record DiffTaskParameters
 
 	public required ProgramSetting<DateTime?> Cutoff { get; init; }
 
-	public string? FromDirOverride { get; init; }
-
-	public string? ToDirOverride { get; init; }
-
 	public static DiffTaskParameters ForTerraria(ProgramSettings programSettings)
 	{
 		return new DiffTaskParameters {
@@ -51,8 +47,6 @@ public sealed record DiffTaskParameters
 			PatchedDir = PathConstants.UnifiedSourceFolder,
 			PatchDir = PathConstants.UnifiedPatchesFolder,
 			Cutoff = new ProgramSetting<DateTime?>(x => x.UnifiedDiffCutoff, programSettings),
-			FromDirOverride = "src/Unified_Staging",
-			ToDirOverride = "src/Unified",
 		};
 	}
 }

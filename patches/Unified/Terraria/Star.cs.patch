@@ -1,4 +1,4 @@
---- src/Unified_Staging/Terraria/Star.cs
+--- src/TerrariaNetCore/Terraria/Star.cs
 +++ src/Unified/Terraria/Star.cs
 @@ -46,7 +_,7 @@
  		starFallCount++;

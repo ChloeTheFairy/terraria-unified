@@ -1,4 +1,4 @@
---- src/Unified_Staging/Terraria/Initializers/AssetInitializer.cs
+--- src/TerrariaNetCore/Terraria/Initializers/AssetInitializer.cs
 +++ src/Unified/Terraria/Initializers/AssetInitializer.cs
 @@ -1,5 +_,7 @@
  using System;

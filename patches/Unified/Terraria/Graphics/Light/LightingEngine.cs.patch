@@ -1,4 +1,4 @@
---- src/Unified_Staging/Terraria/Graphics/Light/LightingEngine.cs
+--- src/TerrariaNetCore/Terraria/Graphics/Light/LightingEngine.cs
 +++ src/Unified/Terraria/Graphics/Light/LightingEngine.cs
 @@ -52,6 +_,7 @@
  		_perFrameLights.Clear();

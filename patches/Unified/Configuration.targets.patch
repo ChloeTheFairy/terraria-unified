@@ -1,4 +1,4 @@
---- src/Unified_Staging/Configuration.targets
+--- src/TerrariaNetCore/Configuration.targets
 +++ src/Unified/Configuration.targets
 @@ -1,6 +_,6 @@
  <Project>
