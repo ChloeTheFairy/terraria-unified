@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.CompilerServices;
+using Terraria.ID;
 using Terraria.IO;
 using Terraria.Social;
 using Terraria.Testing;
@@ -242,7 +243,7 @@ public sealed class WorldMap(int maxWidth, int maxHeight)
 			bool compressed = (version & 0x8000) == 32768;
 			version &= -32769;
 
-			if (version <= 316) {
+			if (version <= GameVersionID.Latest) {
 				if (compressed) {
 					MapHelper.LoadMapVersionCompressed(binaryReader, version);
 				}
