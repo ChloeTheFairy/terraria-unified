@@ -1,0 +1,17 @@
+--- src/TerrariaNetCore/Terraria/GameContent/UI/Chat/ItemTagHandler.cs
++++ src/Unified/Terraria/GameContent/UI/Chat/ItemTagHandler.cs
+@@ -30,7 +_,14 @@
+ 				Main.instance.LoadItem(_item.type);
+ 
+ 			scale *= 0.75f;
++
++			// Vanilla bug fix: a DrawColorCodedStringWithShadow overload uses
++			// 0,0,0,baseColor.A instead of Color.Black, so just check if the
++			// RGB component isn't black without checking alpha.
++			/*
+ 			if (!justCheckingString && color != Color.Black) {
++			*/
++			if (!justCheckingString && (color.R != 0 || color.G != 0 || color.B != 0)) {
+ 				float inventoryScale = Main.inventoryScale;
+ 				Main.inventoryScale = scale;
+ 				ItemSlot.Draw(spriteBatch, ref _item, 14, position - new Vector2(10f) * Main.inventoryScale, Color.White);
