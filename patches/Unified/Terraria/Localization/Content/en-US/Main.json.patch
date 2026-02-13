@@ -1,7 +1,7 @@
 --- src/TerrariaNetCore/Terraria/Localization/Content/en-US/Main.json
 +++ src/Unified/Terraria/Localization/Content/en-US/Main.json
-@@ -3740,6 +_,8 @@
- 		"Twitter": "Twitter",
+@@ -3789,6 +_,8 @@
+ 		"Bluesky": "Bluesky",
  		"Forums": "Forums",
  		"Merch": "Store",
 -		"Wiki": "Wiki"
