@@ -9,7 +9,7 @@ namespace Terraria;
 
 partial class Main
 {
-	internal static string UnifiedVersion => "0.1.1";
+	internal static string UnifiedVersion => "0.2.0";
 	internal static bool UnifiedBranding => true;
 
 	public static bool Vsync { get; set; } = true;
