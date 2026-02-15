@@ -37,6 +37,9 @@ internal sealed partial class NativeLibraryResolver(ILogger<NativeLibraryResolve
 			if (!Directory.Exists(nativesDir)) {
 				throw new DirectoryNotFoundException($"The expected natives directory does not exist: {nativesDir}");
 			}
+
+			logger.LogInformation("Overriding native library resolution path...");
+			SetNativeLibraryPath(nativesDir);
 		}
 		catch (Exception e) {
 			logger.LogError(e, "Failed to determine the native library directory to load from");
@@ -79,6 +82,38 @@ internal sealed partial class NativeLibraryResolver(ILogger<NativeLibraryResolve
 			return moduleMap[name] = handle;
 		}
 	}
+
+	private const int LOAD_LIBRARY_SEARCH_DEFAULT_DIRS = 0x00001000;
+
+	private static void SetNativeLibraryPath(string nativesDir)
+	{
+		if (!OperatingSystem.IsWindows()) {
+			return;
+		}
+
+		try {
+			SetDefaultDllDirectories(LOAD_LIBRARY_SEARCH_DEFAULT_DIRS);
+			AddDllDirectory(nativesDir);
+		}
+		catch {
+			// Pre-Windows 7, KB2533623
+			AddDllDirectory(nativesDir);
+		}
+	}
+
+
+	[LibraryImport("kernel32.dll", SetLastError = true)]
+	[return: MarshalAs(UnmanagedType.Bool)]
+	private static partial bool SetDefaultDllDirectories(int directoryFlags);
+
+	[LibraryImport("kernel32.dll", SetLastError = true, StringMarshalling = StringMarshalling.Utf16)]
+	private static partial void AddDllDirectory(string lpPathName);
+
+	/*
+	[LibraryImport("kernel32.dll", SetLastError = true, StringMarshalling = StringMarshalling.Utf16)]
+	[return: MarshalAs(UnmanagedType.Bool)]
+	private static partial bool SetDllDirectory(string lpPathName);
+	*/
 
 	[LoggerMessage(Level = LogLevel.Information, Message = "Native libraries will be resolved from the following directory: {nativesDir}")]
 	private partial void LogNativesDir(string nativesDir);
