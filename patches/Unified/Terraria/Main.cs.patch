@@ -3507,6 +3507,25 @@
  			spriteBatch.Draw(TextureAssets.GolfBallArrowShadow.Value, vector2 + new Vector2(-4f, 4f) * 1.5f, rectangle, Microsoft.Xna.Framework.Color.White * num, num2, origin, 1.5f, SpriteEffects.None, 0f);
  			float amount = (float)Math.Sin(GlobalTimeWrappedHourly * 4f) * 0.5f + 0.5f;
  			for (float num3 = 0f; num3 < 1f; num3 += 0.25f) {
+@@ -37594,7 +_,18 @@
+ 		if (player[myPlayer].inventory[player[myPlayer].selectedItem].Name != null && player[myPlayer].inventory[player[myPlayer].selectedItem].Name != "")
+ 			text = player[myPlayer].inventory[player[myPlayer].selectedItem].AffixName();
+ 
++		/*
+ 		DynamicSpriteFontExtensionMethods.DrawString(position: new Vector2(236f - (FontAssets.MouseText.Value.MeasureString(text) / 2f).X, 0f), spriteBatch: spriteBatch, spriteFont: FontAssets.MouseText.Value, text: text, color: new Microsoft.Xna.Framework.Color(mouseTextColor, mouseTextColor, mouseTextColor, mouseTextColor), rotation: 0f, origin: default(Vector2), scale: 1f, effects: SpriteEffects.None, layerDepth: 0f);
++		*/
++
++		var itemNamePos = new Vector2(236f - (FontAssets.MouseText.Value.MeasureString(text) / 2f).X, 0f);
++		if (FixHotbarItemName.Enabled) {
++			FixHotbarItemName.DrawItemName(spriteBatch, itemNamePos, text, Main.LocalPlayer.HeldItem);
++		}
++		else {
++			spriteBatch.DrawString(FontAssets.MouseText.Value, text, itemNamePos, new Microsoft.Xna.Framework.Color(mouseTextColor, mouseTextColor, mouseTextColor, mouseTextColor));
++		}
++
+ 		int num = 20;
+ 		for (int i = 0; i < 10; i++) {
+ 			if (i == LocalPlayer.selectedItem && !LocalPlayer.selectedItemState.HasActiveOverride) {
 @@ -37710,8 +_,8 @@
  		int num5 = num2 + 234;
  		int num6 = num + 18;
