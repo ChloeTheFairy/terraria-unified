@@ -1,0 +1,23 @@
+--- src/TerrariaNetCore/Terraria/GameContent/UI/Elements/UITextPanel.cs
++++ src/Unified/Terraria/GameContent/UI/Elements/UITextPanel.cs
+@@ -2,6 +_,7 @@
+ using Microsoft.Xna.Framework.Graphics;
+ using ReLogic.Graphics;
+ using Terraria.UI;
++using Terraria.UI.Chat;
+ 
+ namespace Terraria.GameContent.UI.Elements;
+ 
+@@ -101,7 +_,12 @@
+ 		_text = text;
+ 		_textScale = textScale;
+ 		_isLarge = large;
++		// Fix text not accounting for chat tags in determining size.
++		/*
+ 		_textSize = new Vector2(Font.MeasureString(text.ToString()).X, large ? 32f : 16f) * textScale;
++		*/
++		_textSize = ChatManager.GetStringSize(Font, text.ToString(), new Vector2(textScale));
++		_textSize.Y = (large ? 32f : 16f) * textScale;
+ 		MinWidth.Set(_textSize.X + PaddingLeft + PaddingRight, 0f);
+ 		MinHeight.Set(_textSize.Y + PaddingTop + PaddingBottom, 0f);
+ 	}
