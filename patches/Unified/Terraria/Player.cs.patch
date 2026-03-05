@@ -61,6 +61,36 @@
  		if (Main.tile[x - 1, y] == null)
  			Main.tile[x - 1, y] = new Tile();
  
+@@ -19129,9 +_,16 @@
+ 		if (position.Y < Main.topWorld + (float)num) {
+ 			Main.cameraY = 0f;
+ 			if (Main.remixWorld || forcedGravity > 0) {
++				// TU(#28): Restrict border movement killing the player to the
++				// owning client.
++				/*
+ 				if (position.Y < Main.topWorld + (float)num - (float)height && !dead) {
++				*/
++				if (position.Y < Main.topWorld + (float)num - (float)height && !dead && whoAmI == Main.myPlayer) {
+ 					KillMe(PlayerDeathReason.ByOther(19), 10.0, 0);
++					/*
+ 					if (whoAmI == Main.myPlayer)
++					*/
+ 						AchievementsHelper.NotifyProgressionEvent(44);
+ 				}
+ 
+@@ -19156,7 +_,12 @@
+ 		}
+ 
+ 		if (position.Y > Main.bottomWorld - (float)num) {
++			// TU(#28): Restrict border movement killing the player to the
++			// owning client.
++			/*
+ 			if (!dead)
++			*/
++			if (!dead && whoAmI == Main.myPlayer)
+ 				KillMe(PlayerDeathReason.ByOther(21), 10.0, 0);
+ 
+ 			Main.cameraY = 0f;
 @@ -19490,6 +_,8 @@
  		if (whoAmI != Main.myPlayer) {
  			int num2 = (int)(position.X + (float)(width / 2)) / 16;
