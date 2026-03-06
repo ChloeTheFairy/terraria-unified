@@ -27,4 +27,7 @@ if !errorlevel! neq 0 (
 )
 
 endlocal
-dotnet run --project setup/CLI/Setup.CLI.csproj -c Release -p:WarningLevel=0 -v q -- %*
+
+cd setup
+dotnet run --project CLI/Setup.CLI.csproj -c Release -p:WarningLevel=0 -v q -- %*
+cd ..
