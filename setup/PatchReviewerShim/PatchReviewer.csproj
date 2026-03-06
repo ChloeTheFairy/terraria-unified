@@ -1,0 +1,55 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+	<PropertyGroup>
+		<TargetFrameworks>net8.0-windows;net472</TargetFrameworks>
+		<UseWPF>true</UseWPF>
+		<LangVersion>13</LangVersion>
+
+		<NewRootDir>..\PatchReviewer\PatchReviewer</NewRootDir>
+		<BaseIntermediateOutputPath>$(NewRootDir)\obj\new\</BaseIntermediateOutputPath>
+		<BaseOutputPath>$(NewRootDir)\bin\new\</BaseOutputPath>
+		<EnableDefaultItems>false</EnableDefaultItems>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Include="$(NewRootDir)\**\*.cs" Exclude="$(NewRootDir)\bin\**;$(NewRootDir)\obj\**" />
+		<ApplicationDefinition Include="$(NewRootDir)\App.xaml" />
+		<Page Include="$(NewRootDir)\**\*.xaml" Exclude="$(NewRootDir)\App.xaml" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="$(NewRootDir)\Properties\Resources.Designer.cs">
+			<AutoGen>True</AutoGen>
+			<DesignTime>True</DesignTime>
+			<DependentUpon>$(NewRootDir)\Resources.resx</DependentUpon>
+		</Compile>
+		<EmbeddedResource Include="$(NewRootDir)\Resources\Patch-Mode.xshd" />
+		<Resource Include="$(NewRootDir)\GrayscaleEffect.ps" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="AvalonEdit" Version="6.0.0" />
+		<PackageReference Include="CodeChicken.RedBlack" Version="1.0.0" />
+		<PackageReference Include="DynamicData" Version="9.4.1" />
+		<PackageReference Include="System.Drawing.Common" Version="4.7.2" />
+		<Content Include="$(NewRootDir)\GrayscaleEffect.fx" />
+		<Resource Include="$(NewRootDir)\Images\Compare.png" />
+		<Resource Include="$(NewRootDir)\Images\Reload.png" />
+		<Resource Include="$(NewRootDir)\Images\Blank.ico" />
+		<Resource Include="$(NewRootDir)\Images\Revert.png" />
+		<Resource Include="$(NewRootDir)\Images\Accept.png" />
+		<Resource Include="$(NewRootDir)\Images\Delete.png" />
+		<Resource Include="$(NewRootDir)\Images\NextDiff.png" />
+		<Resource Include="$(NewRootDir)\Images\Patch.png" />
+		<Resource Include="$(NewRootDir)\Images\PrevDiff.png" />
+		<Resource Include="$(NewRootDir)\Images\Refresh.png" />
+		<Resource Include="$(NewRootDir)\Images\Split.png" />
+		<Resource Include="$(NewRootDir)\Images\Save.png" />
+		<Resource Include="$(NewRootDir)\Images\Refocus.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\DiffPatchShim\DiffPatch.csproj" />
+	</ItemGroup>
+
+</Project>
