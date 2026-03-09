@@ -4,7 +4,7 @@
  				SoundEngine.StopTrackedSounds();
  				MapHelper.noStatusText = false;
  				Main.menuMode = 14;
-+				WorldGen.ResizeWorldMapData(0, 0);
++				WorldGen.ResizeWorldMapData(clearTileMap: true);
  			}
  
  			NetMessage.buffer[256].Reset();
