@@ -160,17 +160,35 @@
  		NPC nPC = Main.npc[n];
  		Rectangle value = new Rectangle(nPC.homeTileX * 16, nPC.homeTileY * 16, 16, 16);
  		return hitbox.Intersects(value);
-@@ -5301,8 +_,14 @@
+@@ -5301,8 +_,32 @@
  		Main.rightWorld = Main.maxTilesX * 16;
  		Main.maxSectionsX = Main.maxTilesX / 200;
  		Main.maxSectionsY = Main.maxTilesY / 150;
 +
-+		// Resize the tilemap & world map.
++		ResizeWorldMapData();
+ 	}
+ 
++	public static void ResizeWorldMapData(int maxTilesX = -1, int maxTilesY = -1)
++	{
++		if (maxTilesX > -1 && maxTilesY > -1) {
++			Main.maxTilesX = maxTilesX;
++			Main.maxTilesY = maxTilesY;
++		}
++
 +		Main.tile = new Tilemap((ushort)(Main.maxTilesX + 1), (ushort)(Main.maxTilesY + 1));
 +		Main.ResizeSectionBasedThings();
 +		Main.ResizeWorldMap();
- 	}
- 
++
++		// After resizing everything, restrict the real maxTilesX and maxTilesY
++		// sizes to a predictable value.
++		// This prevents weird issues with rendering the background on the
++		// menu.
++		if (maxTilesX > -1 && maxTilesY > -1) {
++			Main.maxTilesX = WorldSizeLargeX;
++			Main.maxTilesY = WorldSizeLargeY;
++		}
++	}
++
 +	/*
  	public static int GetWorldSize()
  	{
@@ -269,6 +287,14 @@
  
  	public static void worldGenCallback(GenerationProgress customProgressObject, WorldGenerator.Controller customGenController, WorldGenerationFinishCallback afterGeneration)
  	{
+@@ -5419,6 +_,7 @@
+ 		Main.fastForwardTimeToDusk = false;
+ 		Main.UpdateTimeRate();
+ 		Main.menuMode = 0;
++		ResizeWorldMapData(0, 0);
+ 		if (item2 != null)
+ 			Main.QueueMainThreadAction(item2);
+ 	}
 @@ -5831,6 +_,7 @@
  		Main.treeStyle[3] = 0;
  		Liquid.numLiquid = 0;

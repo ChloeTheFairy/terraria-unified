@@ -100,7 +100,7 @@
  			Color.Lerp(Color.Cyan, Color.LimeGreen, 0.5f),
 -			Color.LimeGreen
 +			Color.LimeGreen,
-+			Color.Lerp(Color.LimeGreen, Color.IndianRed, 0.5f),
++			Color.Lerp(Color.LimeGreen, Color.Pink, 0.67f),
  		};
  
 -		string[] array5 = new string[3] {
