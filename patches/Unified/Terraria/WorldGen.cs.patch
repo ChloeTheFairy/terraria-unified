@@ -160,7 +160,7 @@
  		NPC nPC = Main.npc[n];
  		Rectangle value = new Rectangle(nPC.homeTileX * 16, nPC.homeTileY * 16, 16, 16);
  		return hitbox.Intersects(value);
-@@ -5301,8 +_,25 @@
+@@ -5301,8 +_,29 @@
  		Main.rightWorld = Main.maxTilesX * 16;
  		Main.maxSectionsX = Main.maxTilesX / 200;
  		Main.maxSectionsY = Main.maxTilesY / 150;
@@ -180,6 +180,10 @@
 +		// TODO: Clear these if we're clearing the tile map too?
 +		Main.ResizeSectionBasedThings();
 +		Main.ResizeWorldMap();
++
++		if (clearTileMap) {
++			GC.Collect(2, GCCollectionMode.Aggressive);
++		}
 +	}
 +
 +	/*
