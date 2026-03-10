@@ -151,15 +151,6 @@
  	public const int InfectionAndGrassSpreadOuterWorldBuffer = 10;
  	public static bool generatingWorld = false;
  	[ThreadStatic]
-@@ -3833,7 +_,7 @@
- 			return false;
- 
- 		Rectangle hitbox = Main.LocalPlayer.Hitbox;
--		hitbox.Inflate(Main.MaxWorldViewSize.X / 2, Main.MaxWorldViewSize.Y / 2);
-+		hitbox.Inflate(Main.MaxGameplayViewSize.X / 2, Main.MaxGameplayViewSize.Y / 2);
- 		NPC nPC = Main.npc[n];
- 		Rectangle value = new Rectangle(nPC.homeTileX * 16, nPC.homeTileY * 16, 16, 16);
- 		return hitbox.Intersects(value);
 @@ -5279,8 +_,29 @@
  		Main.rightWorld = Main.maxTilesX * 16;
  		Main.maxSectionsX = Main.maxTilesX / 200;
@@ -2326,24 +2317,6 @@
  
  				Skyblock.hasWall[tile.wall] = true;
  				if (!tile.active())
-@@ -60137,7 +_,7 @@
- 				continue;
- 
- 			Rectangle tileRectangle = Utils.CenteredRectangle(player.Center.ToTileCoordinates(), Point.Zero);
--			tileRectangle.Inflate(Main.MaxWorldViewSize.X / 32, Main.MaxWorldViewSize.Y / 32);
-+			tileRectangle.Inflate(Main.MaxGameplayViewSize.X / 32, Main.MaxGameplayViewSize.Y / 32);
- 			tileRectangle = WorldUtils.ClampToWorld(tileRectangle, 10);
- 			for (int j = 0; j < 300; j++) {
- 				Point point = Main.rand.NextFromRectangle(tileRectangle);
-@@ -60385,7 +_,7 @@
- 	private static void SpawnStormLightningNearPlayer(List<Rectangle> safespots, Player player)
- 	{
- 		Rectangle tileRectangle = Utils.CenteredRectangle(player.Center.ToTileCoordinates(), Point.Zero);
--		tileRectangle.Inflate(Main.MaxWorldViewSize.X / 32, Main.MaxWorldViewSize.Y / 32);
-+		tileRectangle.Inflate(Main.MaxGameplayViewSize.X / 32, Main.MaxGameplayViewSize.Y / 32);
- 		tileRectangle = WorldUtils.ClampToWorld(tileRectangle, 10);
- 		if (tileRectangle.Width == 0 || tileRectangle.Height == 0)
- 			return;
 @@ -62942,8 +_,10 @@
  		if (i <= 1 || j <= 1 || i >= Main.maxTilesX - 2 || j >= Main.maxTilesY - 2)
  			return;
