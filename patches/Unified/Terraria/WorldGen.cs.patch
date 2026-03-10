@@ -288,7 +288,7 @@
  		Main.fastForwardTimeToDusk = false;
  		Main.UpdateTimeRate();
  		Main.QueueMainThreadAction(Main.ClearVisualPostProcessEffects);
-+		ResizeWorldMapData(clearTileMap: true);
++		Main.QueueMainThreadAction(() => ResizeWorldMapData(clearTileMap: true));
  		Main.menuMode = 0;
  		if (item2 != null)
  			Main.QueueMainThreadAction(item2);
