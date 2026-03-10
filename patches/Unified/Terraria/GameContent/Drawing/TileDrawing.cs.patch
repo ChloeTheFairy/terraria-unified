@@ -65,7 +65,9 @@
  		tileDrawInfo.tileCache = Main.tile[tileX, tileY];
  		tileDrawInfo.typeCache = tileDrawInfo.tileCache.type;
  		tileDrawInfo.tileFrameX = tileDrawInfo.tileCache.frameX;
-@@ -829,5 +_,5 @@
+@@ -827,7 +_,7 @@
+ 			drawBlackHelper.DrawBlack(tileX, tileY);
+ 
  		CacheSpecialDraws_Part1(tileX, tileY, tileDrawInfo.typeCache, tileDrawInfo.tileFrameX, tileDrawInfo.tileFrameY, !flag);
 -		CacheSpecialDraws_Part2(tileX, tileY, tileDrawInfo);
 +		CacheSpecialDraws_Part2(tileX, tileY, ref tileDrawInfo);

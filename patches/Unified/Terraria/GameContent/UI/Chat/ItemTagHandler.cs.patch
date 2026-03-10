@@ -1,6 +1,6 @@
 --- src/TerrariaNetCore/Terraria/GameContent/UI/Chat/ItemTagHandler.cs
 +++ src/Unified/Terraria/GameContent/UI/Chat/ItemTagHandler.cs
-@@ -30,7 +_,14 @@
+@@ -37,7 +_,14 @@
  				Main.instance.LoadItem(_item.type);
  
  			scale *= 0.75f;

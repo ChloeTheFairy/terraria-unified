@@ -74,7 +74,7 @@
  
  				if (waterWalk && Main.tile[i, j].liquid > 0 && Main.tile[i, j - 1].liquid == 0) {
  					int num7 = (int)Main.tile[i, j].liquid / 32 * 2 + 2;
-@@ -3745,8 +_,10 @@
+@@ -3754,8 +_,10 @@
  					}
  				}
  				else if (vector3.X + (float)Width <= vector4.X && !Main.tileSolidTop[tile.type]) {
@@ -85,7 +85,7 @@
  
  					if (Main.tile[i - 1, j].slope() != 2 && Main.tile[i - 1, j].slope() != 4) {
  						num = i;
-@@ -3759,8 +_,10 @@
+@@ -3768,8 +_,10 @@
  					}
  				}
  				else if (vector3.X >= vector4.X + 16f && !Main.tileSolidTop[tile.type]) {

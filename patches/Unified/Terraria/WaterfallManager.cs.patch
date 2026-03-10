@@ -1,6 +1,6 @@
 --- src/TerrariaNetCore/Terraria/WaterfallManager.cs
 +++ src/Unified/Terraria/WaterfallManager.cs
-@@ -106,33 +_,45 @@
+@@ -107,33 +_,45 @@
  		for (int i = num; i < num2; i++) {
  			for (int j = num3; j < num4; j++) {
  				Tile tile = Main.tile[i, j];
@@ -46,7 +46,7 @@
  
  						if ((tile3.liquid > 160 || tile4.liquid > 160) && ((tile3.liquid == 0 && !WorldGen.SolidTile(tile3) && tile3.slope() == 0) || (tile4.liquid == 0 && !WorldGen.SolidTile(tile4) && tile4.slope() == 0)) && currentMax < qualityMax) {
  							waterfalls[currentMax].type = 0;
-@@ -154,10 +_,13 @@
+@@ -155,10 +_,13 @@
  
  				if (tile.type == 196) {
  					Tile tile5 = Main.tile[i, j + 1];
@@ -60,7 +60,7 @@
  
  					if (!WorldGen.SolidTile(tile5) && tile5.liquid == 0 && tile5.slope() == 0 && currentMax < qualityMax) {
  						waterfalls[currentMax].type = 11;
-@@ -169,10 +_,13 @@
+@@ -170,10 +_,13 @@
  
  				if (tile.type == 460) {
  					Tile tile6 = Main.tile[i, j + 1];
@@ -74,7 +74,7 @@
  
  					if (!WorldGen.SolidTile(tile6) && tile6.liquid == 0 && tile6.slope() == 0 && currentMax < qualityMax) {
  						waterfalls[currentMax].type = 22;
-@@ -184,10 +_,13 @@
+@@ -185,10 +_,13 @@
  
  				if (tile.type == 717) {
  					Tile tile7 = Main.tile[i, j + 1];
@@ -88,7 +88,7 @@
  
  					if (!WorldGen.SolidTile(tile7) && tile7.liquid == 0 && tile7.slope() == 0 && currentMax < qualityMax) {
  						waterfalls[currentMax].type = 26;
-@@ -445,31 +_,40 @@
+@@ -446,31 +_,40 @@
  
  				AddLight(num12, num13, num14);
  				Tile tile3 = Main.tile[num13, num14];

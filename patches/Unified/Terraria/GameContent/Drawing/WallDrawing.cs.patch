@@ -1,6 +1,6 @@
 --- src/TerrariaNetCore/Terraria/GameContent/Drawing/WallDrawing.cs
 +++ src/Unified/Terraria/GameContent/Drawing/WallDrawing.cs
-@@ -11,8 +_,8 @@
+@@ -11,7 +_,7 @@
  {
  	public static bool QuickPaintLookup = true;
  	private static VertexColors _glowPaintColors = new VertexColors(Color.White);
@@ -9,9 +9,7 @@
  	private TilePaintSystemV2 _paintSystem;
  	private bool _shouldShowInvisibleWalls;
  	private DrawBlackHelper drawBlackHelper;
- 	private TilePaintSystemV2.WallVariationKey _lastPaintLookupKey;
-@@ -65,14 +_,24 @@
- 		Rectangle value = new Rectangle(0, 0, 32, 32);
+@@ -66,13 +_,23 @@
  		int underworldLayer = Main.UnderworldLayer;
  		drawBlackHelper = new DrawBlackHelper(0u, drawOffSet);
  		_lastPaintLookupKey = default(TilePaintSystemV2.WallVariationKey);
