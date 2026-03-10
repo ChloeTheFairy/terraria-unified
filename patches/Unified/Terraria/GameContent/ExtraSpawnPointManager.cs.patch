@@ -1,6 +1,6 @@
 --- src/TerrariaNetCore/Terraria/GameContent/ExtraSpawnPointManager.cs
 +++ src/Unified/Terraria/GameContent/ExtraSpawnPointManager.cs
-@@ -199,14 +_,14 @@
+@@ -206,17 +_,17 @@
  				return false;
  
  			if (settings.remix) {
@@ -8,7 +8,10 @@
 +				if (WorldGen.GetWorldSize() <= WorldSize.Small)
  					num2 = 150;
  
- 				if (y < GenVars.remixSurfaceLayerLow || y > GenVars.remixMushroomLayerHigh)
+ 				if (!settings.skyblock && (y < GenVars.remixSurfaceLayerLow || y > GenVars.remixMushroomLayerHigh))
+ 					return false;
+ 
+ 				if (settings.skyblock && y < Main.UnderworldLayer)
  					return false;
  			}
  

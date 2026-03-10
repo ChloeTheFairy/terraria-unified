@@ -1,6 +1,6 @@
 --- src/TerrariaNetCore/Terraria/GameContent/Drawing/WallDrawing.cs
 +++ src/Unified/Terraria/GameContent/Drawing/WallDrawing.cs
-@@ -11,7 +_,7 @@
+@@ -11,8 +_,8 @@
  {
  	public static bool QuickPaintLookup = true;
  	private static VertexColors _glowPaintColors = new VertexColors(Color.White);
@@ -8,10 +8,12 @@
 +	private Tilemap _tileArray;
  	private TilePaintSystemV2 _paintSystem;
  	private bool _shouldShowInvisibleWalls;
+ 	private DrawBlackHelper drawBlackHelper;
  	private TilePaintSystemV2.WallVariationKey _lastPaintLookupKey;
-@@ -64,13 +_,23 @@
+@@ -65,14 +_,24 @@
  		Rectangle value = new Rectangle(0, 0, 32, 32);
  		int underworldLayer = Main.UnderworldLayer;
+ 		drawBlackHelper = new DrawBlackHelper(0u, drawOffSet);
  		_lastPaintLookupKey = default(TilePaintSystemV2.WallVariationKey);
 +		// tModLoader - Swapped loop iteration order to improve memory access
 +		// linearity.  Minor perf improvement, may cause slight visual
