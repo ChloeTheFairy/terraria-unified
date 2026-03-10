@@ -3460,7 +3460,7 @@
  		for (int i = 0; i < maxNPCs; i++) {
  			NPC nPC = npc[i];
  			if (!nPC.active || nPC.CurrentlyShimmerTransparent())
-@@ -37112,12 +_,12 @@
+@@ -37112,9 +_,9 @@
  			int type = nPC.type;
  			LoadNPC(type);
  			nPC.position += nPC.netOffset;
@@ -3472,9 +3472,6 @@
  
  			if (nPC.type == 677)
  				value = Utils.CenteredRectangle(nPC.Center, new Vector2(20f, 20f));
- 
- 			if (nPC.type == 696 || nPC.type == 695)
- 				value = Utils.CenteredRectangle(nPC.Bottom - new Vector2(nPC.direction * -10, 20f), new Vector2(60f, 40f));
 @@ -37149,7 +_,7 @@
  				else {
  					bool flag3 = SmartInteractShowingGenuine && SmartInteractNPC == i;
@@ -5257,7 +5254,7 @@
  		TimeLogger.DrawBlackTiles.AddTime(fromTimestamp);
 +		*/
 +
-+		if (shimmerAlpha == 1f) {
++		if (shimmerAlpha == 1f || TileDrawingBase.DrawOwnBlacks) {
 +			return;
 +		}
 +
@@ -5325,16 +5322,6 @@
  	}
  
  	public static bool ShouldShowInvisibleBlocksAndWalls()
-@@ -50309,7 +_,7 @@
- 			val = 4096;
- 
--		int num = Math.Min(base.GraphicsDevice.PresentationParameters.BackBufferWidth, val);
-+		int num = Math.Min(base.GraphicsDevice.PresentationParameters.BackBufferWidth, val);
--		int num2 = Math.Min(base.GraphicsDevice.PresentationParameters.BackBufferHeight, val);
-+		int num2 = Math.Min(base.GraphicsDevice.PresentationParameters.BackBufferHeight, val);
- 		offScreenRange = 192;
- 		if (num + offScreenRange * 2 > _renderTargetMaxSize)
- 			offScreenRange = (_renderTargetMaxSize - num) / 2;
 @@ -50348,7 +_,7 @@
  	protected void DrawWires()
  	{
@@ -5620,7 +5607,7 @@
  			}
  		}
  
-@@ -53638,11 +_,11 @@
+@@ -53638,8 +_,8 @@
  		if (DebugOptions.DrawWaitInMs > 0.0)
  			ThreadUtilities.HighPrecisionSleep(DebugOptions.DrawWaitInMs);
  
@@ -5631,9 +5618,6 @@
  		ForcedMinimumZoom = Math.Max(Math.Max(1f, val), val2);
  		if (SupportWideScreen)
  			ForcedMinimumZoom = 1f;
- 
- 		GameViewMatrix.Effects = ((!gameMenu && player[myPlayer].gravDir != 1f) ? SpriteEffects.FlipVertically : SpriteEffects.None);
- 		BackgroundViewMatrix.Effects = GameViewMatrix.Effects;
 @@ -53695,7 +_,7 @@
  				TimeLogger.StartTimestamp fromTimestamp5 = TimeLogger.Start();
  				spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, DefaultSamplerState, DepthStencilState.None, Rasterizer, null, matrix);
