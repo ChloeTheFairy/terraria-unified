@@ -10,5 +10,5 @@
 +		}
 +
  		Trace.WriteLine("[chat] " + text);
- 		ChatMessageContainer chatMessageContainer = new ChatMessageContainer();
- 		chatMessageContainer.SetContents(text, color, widthLimitInPixels);
+ 		if (!Main.dedServ) {
+ 			ChatMessageContainer chatMessageContainer = new ChatMessageContainer();

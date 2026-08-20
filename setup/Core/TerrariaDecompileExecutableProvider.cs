@@ -8,8 +8,8 @@ namespace Terraria.ModLoader.Setup.Core;
 
 public sealed class TerrariaDecompileExecutableProvider
 {
-	private static readonly Version ClientVersion = new("1.4.5.6");
-	private static readonly Version ServerVersion = new("1.4.5.6");
+	private static readonly Version ClientVersion = new("1.4.5.7");
+	private static readonly Version ServerVersion = new("1.4.5.7");
 
 	private readonly WorkspaceInfo workspaceInfo;
 	private readonly HttpClient httpClient;
@@ -108,6 +108,8 @@ public sealed class TerrariaDecompileExecutableProvider
 		if (File.Exists(Path.Combine(workspaceInfo.TerrariaSteamDirectory, "FNA.dll"))
 			|| UniversalAssemblyResolver.GetAssemblyInGac(AssemblyNameReference.Parse("Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553")) is null)
 			paths.Add(Path.Combine("setup", "xna_redist"));
+
+		paths.Add("patches/Terraria/Terraria/Libraries/XNA"); // For Microsoft.Xna.Framework.Content.Pipeline.dll which isn't embedded in the windows dll because it's a mixed mode assembly
 
 		return paths;
 	}
