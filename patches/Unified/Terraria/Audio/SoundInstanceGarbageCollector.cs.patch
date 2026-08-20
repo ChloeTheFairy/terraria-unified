@@ -1,0 +1,10 @@
+--- src/TerrariaNetCore/Terraria/Audio/SoundInstanceGarbageCollector.cs
++++ src/Unified/Terraria/Audio/SoundInstanceGarbageCollector.cs
+@@ -9,6 +_,7 @@
+ 
+ 	public static void Track(SoundEffectInstance sound)
+ 	{
++		return;
+ 		if (Program.IsFna)
+ 			_activeSounds.Add(sound);
+ 	}
