@@ -12,11 +12,15 @@ internal static class FixHotbarItemName
 
 	public static void DrawItemName(SpriteBatch sb, Vector2 pos, string itemName, Item item)
 	{
-		var color = ItemRarity.GetColor(item.rare);
-		if (item.expert || item.rare == ItemRarityID.Expert) {
+		var rare = item.rare;
+		if (item.IsAir)
+			rare = ItemRarityID.White;
+
+		var color = ItemRarity.GetColor(rare);
+		if (item.expert || rare == ItemRarityID.Expert) {
 			color = new Microsoft.Xna.Framework.Color(Main.DiscoR, Main.DiscoG, Main.DiscoB);
 		}
-		else if (item.rare == ItemRarityID.Master) {
+		else if (rare == ItemRarityID.Master) {
 			color = new Microsoft.Xna.Framework.Color(255, (byte)(Main.masterColor * 200f), 0);
 		}
 
