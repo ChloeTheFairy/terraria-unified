@@ -1,0 +1,14 @@
+--- src/TerrariaNetCore/Terraria/GameContent/Shaders/WaterShaderData.cs
++++ src/Unified/Terraria/GameContent/Shaders/WaterShaderData.cs
+@@ -146,6 +_,11 @@
+ 
+ 	private void DrawWaves()
+ 	{
++		// TU: Bug fix because we resize the tilemap to 1x1 after leaving a
++		// world, which causes a nasty access violation here.
++		if (Main.gameMenu)
++			return;
++
+ 		Vector2 screenPosition = Main.screenPosition;
+ 		Vector2 vector = (Main.drawToScreen ? Vector2.Zero : new Vector2(Main.offScreenRange, Main.offScreenRange));
+ 		Vector2 vector2 = -_lastDistortionDrawOffset / 0.25f + vector;
