@@ -175,7 +175,7 @@ public static class LiquidEdgeRenderer
 			highLiquid = tileCache.LiquidAmount;
 			liquidType = tileCache.LiquidType;
 		}
-		else {
+		else if (tileCache.TileType != TileID.Bubble) {
 			if (tileCache.LiquidAmount > 0 && blockType != BlockType.Solid && (blockType != BlockType.HalfBlock || tileCache.liquid > 160)) {
 				if (tileCache.LiquidAmount >= highLiquid) {
 					highLiquid = tileCache.LiquidAmount;
@@ -218,6 +218,9 @@ public static class LiquidEdgeRenderer
 
 			if (!up && !down && !left && !right)
 				return;
+		}
+		else {
+			return;
 		}
 
 
