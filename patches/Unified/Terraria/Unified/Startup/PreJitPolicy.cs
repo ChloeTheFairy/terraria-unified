@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Threading;
@@ -64,23 +65,34 @@ internal sealed class DefaultPreJitPolicy(ILogger<DefaultPreJitPolicy> logger) :
 
 	private static void ForceJitOnAssembly(Assembly assembly)
 	{
-		foreach (Type type in assembly.GetTypes()) {
-			var methods = type.GetMethods(BindingFlags.DeclaredOnly | BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic);
-			foreach (MethodInfo methodInfo in methods) {
-				if (methodInfo.IsAbstract || methodInfo.ContainsGenericParameters || methodInfo.GetMethodBody() == null) {
-					continue;
-				}
+		var methodsToJit = assembly.GetTypes()
+			.SelectMany(x => x.GetMethods(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Instance))
+			.Where(x => !x.IsAbstract && !x.ContainsGenericParameters && x.GetMethodBody() is not null);
 
-				RuntimeHelpers.PrepareMethod(methodInfo.MethodHandle);
+		if (Environment.ProcessorCount > 1) {
+			methodsToJit.AsParallel().AsUnordered().ForAll(ForceJitOnMethod);
+		}
+		else {
+
+		}
+
+		foreach (var method in methodsToJit) {
+			foreach (MethodInfo methodInfo in methodsToJit) {
+				ForceJitOnMethod(methodInfo);
 			}
 		}
+	}
+
+	private static void ForceJitOnMethod(MethodInfo methodInfo)
+	{
+		RuntimeHelpers.PrepareMethod(methodInfo.MethodHandle);
 	}
 
 	private static void ForceStaticInitializers(Assembly assembly)
 	{
 		foreach (Type type in assembly.GetTypes()) {
 			if (type.IsGenericType) {
-				return;
+				continue;
 			}
 
 			RuntimeHelpers.RunClassConstructor(type.TypeHandle);
