@@ -41,12 +41,17 @@
  	public const int InfectionAndGrassSpreadOuterWorldBuffer = 10;
  	public static bool generatingWorld = false;
  	[ThreadStatic]
-@@ -5273,8 +_,29 @@
+@@ -5273,8 +_,34 @@
  		Main.rightWorld = Main.maxTilesX * 16;
  		Main.maxSectionsX = Main.maxTilesX / 200;
  		Main.maxSectionsY = Main.maxTilesY / 150;
 +
-+		ResizeWorldMapData();
++		if (ThreadCheck.IsMainThread) {
++			ResizeWorldMapData();
++		}
++		else {
++			Main.RunOnMainThread(() => ResizeWorldMapData()).GetAwaiter().GetResult();
++		}
  	}
  
 +	public static void ResizeWorldMapData(bool clearTileMap = false)
