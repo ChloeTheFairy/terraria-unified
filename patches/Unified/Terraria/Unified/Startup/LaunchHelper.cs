@@ -23,7 +23,7 @@ internal sealed class ContentDirectoryResolver(ILogger<ContentDirectoryResolver>
 
 		List<string> contentDirectories = [];
 
-		// contentDirectories.Add("Content");
+		contentDirectories.Add("Content");
 		contentDirectories.Add(Path.Combine("..", "Content"));
 		contentDirectories.Add(Path.Combine("..", "Terraria", "Content"));
 

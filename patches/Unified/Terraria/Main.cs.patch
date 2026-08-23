@@ -2081,7 +2081,7 @@
  				rectangle17.Height /= 4;
  				rectangle17.Y += proj.frame * rectangle17.Height;
  				EntitySpriteDraw(color: proj.GetAlpha(Microsoft.Xna.Framework.Color.Lerp(projectileColor, Microsoft.Xna.Framework.Color.White, 0.3f)), texture: value83, position: proj.Center - screenPosition, sourceRectangle: rectangle17, rotation: proj.rotation, origin: rectangle17.Size() / 2f, scale: proj.scale, effects: SpriteEffects.None);
-@@ -28684,7 +_,7 @@
+@@ -28684,12 +_,12 @@
  				center7 += vector75 * proj.scale * rectangle17.Height / 2f;
  				if (num309 > 0f) {
  					float num310 = 0f;
@@ -2090,8 +2090,18 @@
  					while (num310 + 1f < num309) {
  						if (num309 - num310 < (float)rectangle18.Height)
  							rectangle18.Height = (int)(num309 - num310);
-@@ -28701,7 +_,7 @@
- 				Microsoft.Xna.Framework.Point point4 = center7.ToTileCoordinates();
+ 
+-						Microsoft.Xna.Framework.Point point3 = center7.ToTileCoordinates();
++						System.Drawing.Point point3 = center7.ToTileCoordinates();
+ 						Microsoft.Xna.Framework.Color color83 = Lighting.GetColor(point3.X, point3.Y);
+ 						color83 = Microsoft.Xna.Framework.Color.Lerp(color83, Microsoft.Xna.Framework.Color.White, 0.3f);
+ 						EntitySpriteDraw(value84, center7 - screenPosition, rectangle18, proj.GetAlpha(color83), proj.rotation, rectangle18.Bottom(), proj.scale, SpriteEffects.None);
+@@ -28698,10 +_,10 @@
+ 					}
+ 				}
+ 
+-				Microsoft.Xna.Framework.Point point4 = center7.ToTileCoordinates();
++				System.Drawing.Point point4 = center7.ToTileCoordinates();
  				Microsoft.Xna.Framework.Color color84 = Lighting.GetColor(point4.X, point4.Y);
  				color84 = Microsoft.Xna.Framework.Color.Lerp(color84, Microsoft.Xna.Framework.Color.White, 0.3f);
 -				Microsoft.Xna.Framework.Rectangle value87 = value85.Frame();
@@ -2110,6 +2120,15 @@
  				return;
  			}
  
+@@ -28738,7 +_,7 @@
+ 				if (num319 > num316 - 60f)
+ 					num320 = MathHelper.Lerp(1f, 0f, (num319 - (num316 - 60f)) / 60f);
+ 
+-				Microsoft.Xna.Framework.Point point5 = proj.Center.ToTileCoordinates();
++				System.Drawing.Point point5 = proj.Center.ToTileCoordinates();
+ 				Collision.ExpandVertically(point5.X, point5.Y, out var topY, out var bottomY, (int)num317, (int)num318);
+ 				topY++;
+ 				bottomY--;
 @@ -28750,7 +_,7 @@
  				vector77.X = vector77.Y * num321;
  				new Vector2(value89.X - vector77.X / 2f, value89.Y);
@@ -2164,15 +2183,17 @@
  					origin24 = rectangle21.Size() / 2f;
  					Vector2 vector97 = new Vector2(0f, -720f).RotatedBy(proj.velocity.ToRotation());
  					float num375 = proj.ai[0] % 45f / 45f;
-@@ -29229,7 +_,7 @@
+@@ -29229,8 +_,8 @@
  				}
  				else if (proj.type == 1023) {
  					Texture2D value108 = TextureAssets.GlowMask[356].Value;
 -					Microsoft.Xna.Framework.Rectangle rectangle22 = value108.Frame();
 +					System.Drawing.Rectangle rectangle22 = value108.Frame();
- 					EntitySpriteDraw(origin: rectangle22.Center(), color: new Microsoft.Xna.Framework.Color(255, 255, 255, 100) * proj.Opacity, texture: value108, position: vector81, sourceRectangle: rectangle22, rotation: num341, scale: vector82, effects: dir);
+-					EntitySpriteDraw(origin: rectangle22.Center(), color: new Microsoft.Xna.Framework.Color(255, 255, 255, 100) * proj.Opacity, texture: value108, position: vector81, sourceRectangle: rectangle22, rotation: num341, scale: vector82, effects: dir);
++					EntitySpriteDraw(origin: new Vector2(rectangle22.Center.X, rectangle22.Center.Y), color: new Microsoft.Xna.Framework.Color(255, 255, 255, 100) * proj.Opacity, texture: value108, position: vector81, sourceRectangle: rectangle22, rotation: num341, scale: vector82, effects: dir);
  					if (proj.localAI[1] == 1f) {
  						Microsoft.Xna.Framework.Color shineColor = new Microsoft.Xna.Framework.Color(120, 190, 255, 100);
+ 						float num378 = (float)proj.timeLeft / 60f % 0.125f / 0.125f;
 @@ -29253,7 +_,7 @@
  				else if (proj.type == 707 || proj.type == 708) {
  					float num379 = 0.5f;
