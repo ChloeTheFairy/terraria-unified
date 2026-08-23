@@ -9,7 +9,7 @@
  {
  	public static class BuilderAccToggleIDs
  	{
-@@ -15871,11 +_,14 @@
+@@ -15869,11 +_,14 @@
  			return;
  
  		float num3 = position.Y;
@@ -24,7 +24,7 @@
  
  		if ((!Main.tile[num, num2 - 1].active() || !Main.tileRope[Main.tile[num, num2 - 1].type]) && (!Main.tile[num, num2 + 1].active() || !Main.tileRope[Main.tile[num, num2 + 1].type]))
  			num3 = num2 * 16 + 22;
-@@ -18844,8 +_,10 @@
+@@ -18842,8 +_,10 @@
  
  				int num3 = (int)((position.Y + (float)num2 - 44f * gravDir) / 16f);
  				if (Main.tile[num, num3] != null && Main.tile[num, num3].liquid < 128) {
@@ -35,7 +35,7 @@
  
  					if (!Main.tile[num, num3].active() || !Main.tileSolid[Main.tile[num, num3].type] || Main.tileSolidTop[Main.tile[num, num3].type])
  						flag = false;
-@@ -19271,10 +_,17 @@
+@@ -19269,10 +_,17 @@
  		if (gravDir == -1f)
  			num2 = (int)(position.Y - 0.1f) / 16;
  
@@ -53,7 +53,7 @@
  
  		if (num3 <= -1) {
  			ResetFloorFlags();
-@@ -19293,7 +_,10 @@
+@@ -19291,7 +_,10 @@
  			num3 = -1;
  
  		if (!wet && !mount.Cart)
@@ -64,7 +64,7 @@
  	}
  
  	public void ResetFloorFlags()
-@@ -19305,9 +_,14 @@
+@@ -19303,9 +_,14 @@
  		runningOnSand = false;
  	}
  
@@ -80,7 +80,7 @@
  		if (Main.tile[x - 1, y] == null)
  			Main.tile[x - 1, y] = new Tile();
  
-@@ -19316,6 +_,7 @@
+@@ -19314,6 +_,7 @@
  
  		if (Main.tile[x, y] == null)
  			Main.tile[x, y] = new Tile();
@@ -88,7 +88,7 @@
  
  		if (Main.tile[x, y].nactive() && Main.tileSolid[Main.tile[x, y].type])
  			result = Main.tile[x, y];
-@@ -19554,9 +_,16 @@
+@@ -19552,9 +_,16 @@
  		if (position.Y < Main.topWorld + (float)num) {
  			Main.cameraY = 0f;
  			if (Main.remixWorld || forcedGravity > 0) {
@@ -105,7 +105,7 @@
  						AchievementsHelper.NotifyProgressionEvent(44);
  				}
  
-@@ -19582,7 +_,12 @@
+@@ -19580,7 +_,12 @@
  
  		bool skyblockWorld = Main.skyblockWorld;
  		if (position.Y > Main.bottomWorld - (float)num) {
@@ -118,7 +118,7 @@
  				KillMe(PlayerDeathReason.ByOther(21), 10.0, 0);
  
  			Main.cameraY = 0f;
-@@ -19916,6 +_,8 @@
+@@ -19914,6 +_,8 @@
  		if (whoAmI != Main.myPlayer) {
  			int num2 = (int)(position.X + (float)(width / 2)) / 16;
  			int num3 = (int)(position.Y + (float)(height / 2)) / 16;
@@ -127,7 +127,7 @@
  			if (!WorldGen.InWorld(num2, num3, 4))
  				flag = true;
  			else if (Main.tile[num2, num3] == null)
-@@ -19928,6 +_,10 @@
+@@ -19926,6 +_,10 @@
  				flag = true;
  			else if (Main.tile[num2, num3 + 3] == null)
  				flag = true;
@@ -138,7 +138,7 @@
  
  			if (flag) {
  				outOfRange = true;
-@@ -20551,6 +_,7 @@
+@@ -20549,6 +_,7 @@
  
  			TrySyncingInput();
  			UpdateNearbyCraftingTiles();
@@ -146,7 +146,7 @@
  			HandleBeingInChestRange();
  			tileEntityAnchor.GetTileEntity()?.OnPlayerUpdate(this);
  		}
-@@ -20649,6 +_,7 @@
+@@ -20647,6 +_,7 @@
  		if (tileTargetY < 5)
  			tileTargetY = 5;
  
@@ -154,7 +154,7 @@
  		if (Main.tile[tileTargetX - 1, tileTargetY] == null)
  			Main.tile[tileTargetX - 1, tileTargetY] = new Tile();
  
-@@ -20657,6 +_,7 @@
+@@ -20655,6 +_,7 @@
  
  		if (Main.tile[tileTargetX, tileTargetY] == null)
  			Main.tile[tileTargetX, tileTargetY] = new Tile();
@@ -162,7 +162,7 @@
  
  		if (inventory[selectedItem].axe > 0 && !Main.tile[tileTargetX, tileTargetY].active() && inventory[selectedItem].createWall <= 0 && (inventory[selectedItem].hammer <= 0 || inventory[selectedItem].axe != 0)) {
  			if (Main.tile[tileTargetX - 1, tileTargetY].active() && Main.tile[tileTargetX - 1, tileTargetY].type == 323) {
-@@ -21295,11 +_,14 @@
+@@ -21293,11 +_,14 @@
  					int num35 = num34 * 16 + 8 - width / 2;
  					float y2 = position.Y;
  					y2 = num32 * 16 + 22;
@@ -177,7 +177,7 @@
  
  					if (WorldGen.IsRope(num34, num32 - 1) || WorldGen.IsRope(num34, num32 + 1))
  						y2 = num32 * 16 + 22;
-@@ -21332,8 +_,10 @@
+@@ -21330,8 +_,10 @@
  			if (velocity.X != 0f)
  				pulley = false;
  
@@ -188,7 +188,7 @@
  
  			if (!WorldGen.IsRope(num31, num32))
  				pulley = false;
-@@ -21377,8 +_,10 @@
+@@ -21375,8 +_,10 @@
  			if (WorldGen.IsRope(num36, num38 - 1) || WorldGen.IsRope(num36, num38 + 1))
  				flag16 = true;
  
@@ -199,7 +199,7 @@
  
  			if (!WorldGen.IsRope(num36, num37)) {
  				flag15 = false;
-@@ -26280,8 +_,10 @@
+@@ -26278,8 +_,10 @@
  
  	public void TileInteractionsCheck(int myX, int myY)
  	{
@@ -210,7 +210,7 @@
  
  		if (Main.tile[myX, myY].active()) {
  			TileInteractionsMouseOver(myX, myY);
-@@ -29417,6 +_,8 @@
+@@ -29415,6 +_,8 @@
  
  	public void AdjTiles()
  	{
@@ -219,7 +219,7 @@
  		Array.Clear(adjTile, 0, adjTile.Length);
  		oldAdjWaterSource = adjWaterSource;
  		adjWaterSource = false;
-@@ -29427,13 +_,85 @@
+@@ -29425,13 +_,85 @@
  		alchemyTable = false;
  		Rectangle tileRegion = TileReachCheckSettings.Simple.GetTileRegion(this, ateArtisanBread ? 4 : 0);
  		tileRegion = WorldUtils.ClampToWorld(tileRegion);
@@ -305,7 +305,7 @@
  				}
  
  				if (tile.liquid > 200 && tile.liquidType() == 0)
-@@ -42100,8 +_,11 @@
+@@ -42098,8 +_,11 @@
  				if (whoAmI == Main.myPlayer && flag) {
  					int num7 = (int)(itemLocation.X + (float)heldItemFrame.Width * 0.8f * (float)direction) / 16;
  					int num8 = (int)(itemLocation.Y + mountOffset + (float)(heldItemFrame.Height / 2)) / 16;

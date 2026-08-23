@@ -8,33 +8,33 @@
  
  namespace Terraria;
  
-@@ -963,8 +_,10 @@
- 				if (!WorldGen.InWorld(num132, num133, 3))
+@@ -965,8 +_,10 @@
+ 				if (!WorldGen.InWorld(num153, num154, 3))
  					break;
  
 +				/*
- 				if (Main.tile[num132, num133] == null)
- 					Main.tile[num132, num133] = new Tile();
+ 				if (Main.tile[num153, num154] == null)
+ 					Main.tile[num153, num154] = new Tile();
 +				*/
  
  				if (Main.netMode == 2) {
- 					if (!flag11) {
-@@ -1149,11 +_,13 @@
- 				BitsByte bitsByte22 = (byte)0;
- 				BitsByte bitsByte23 = (byte)0;
- 				BitsByte bitsByte24 = (byte)0;
+ 					if (!flag13) {
+@@ -1151,11 +_,13 @@
+ 				BitsByte bitsByte19 = (byte)0;
+ 				BitsByte bitsByte20 = (byte)0;
+ 				BitsByte bitsByte21 = (byte)0;
 -				Tile tile4 = null;
 +				Tile tile4 = default;
- 				for (int num90 = num86; num90 < num86 + num88; num90++) {
- 					for (int num91 = num87; num91 < num87 + num89; num91++) {
+ 				for (int num95 = num91; num95 < num91 + num93; num95++) {
+ 					for (int num96 = num92; num96 < num92 + num94; num96++) {
 +						/*
- 						if (Main.tile[num90, num91] == null)
- 							Main.tile[num90, num91] = new Tile();
+ 						if (Main.tile[num95, num96] == null)
+ 							Main.tile[num95, num96] = new Tile();
 +						*/
  
- 						tile4 = Main.tile[num90, num91];
- 						bool flag7 = tile4.active();
-@@ -1633,10 +_,19 @@
+ 						tile4 = Main.tile[num95, num96];
+ 						bool flag8 = tile4.active();
+@@ -1639,10 +_,19 @@
  				int num24 = reader.ReadByte();
  				string name = string.Empty;
  				if (num24 != 0) {
@@ -54,21 +54,21 @@
  				}
  
  				if (Main.netMode == 1) {
-@@ -2044,10 +_,12 @@
+@@ -2050,10 +_,12 @@
  						Netplay.Clients[whoAmI].SpamWater += 1f;
  				}
  
 +				/*
- 				if (Main.tile[num10, num11] == null)
- 					Main.tile[num10, num11] = new Tile();
+ 				if (Main.tile[num3, num4] == null)
+ 					Main.tile[num3, num4] = new Tile();
 +				*/
  
--				lock (Main.tile[num10, num11]) {
-+				// lock (Main.tile[num10, num11]) {
- 					Main.tile[num10, num11].liquid = b2;
- 					Main.tile[num10, num11].liquidType(liquidType);
+-				lock (Main.tile[num3, num4]) {
++				// lock (Main.tile[num3, num4]) {
+ 					Main.tile[num3, num4].liquid = b2;
+ 					Main.tile[num3, num4].liquidType(liquidType);
  					if (Main.netMode == 2) {
-@@ -2057,7 +_,7 @@
+@@ -2063,7 +_,7 @@
  					}
  
  					break;

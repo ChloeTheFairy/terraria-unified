@@ -1,6 +1,6 @@
 --- src/TerrariaNetCore/Terraria/Projectile.cs
 +++ src/Unified/Terraria/Projectile.cs
-@@ -14075,7 +_,7 @@
+@@ -14076,7 +_,7 @@
  				return true;
  		}
  
@@ -9,7 +9,7 @@
  			return true;
  
  		if (customHitbox is MultiPointHitbox) {
-@@ -45108,10 +_,12 @@
+@@ -45109,10 +_,12 @@
  		int num2 = 2;
  		int num3 = 0;
  		while (num3 <= num) {
@@ -24,7 +24,7 @@
  
  			if (WorldGen.ActiveAndWalkableTile(p.X, p.Y)) {
  				Vector2 vector = p.ToWorldCoordinates(8f, 0f);
-@@ -45432,8 +_,10 @@
+@@ -45433,8 +_,10 @@
  			Vector2 vector5 = default(Vector2);
  			for (int i = num10; i < num11; i++) {
  				for (int j = num12; j < num13; j++) {
@@ -35,7 +35,7 @@
  
  					vector5.X = i * 16;
  					vector5.Y = j * 16;
-@@ -45562,8 +_,11 @@
+@@ -45563,8 +_,11 @@
  		}
  		else if (ai[0] == 2f) {
  			Point point3 = base.Center.ToTileCoordinates();
@@ -47,7 +47,7 @@
  
  			bool flag = true;
  			if (AI_007_GrapplingHooks_CanTileBeLatchedOnTo(Main.tile[point3.X, point3.Y]))
-@@ -46138,11 +_,14 @@
+@@ -46139,11 +_,14 @@
  			int num4 = (int)(base.Center.Y / 16f);
  			_ = position.Y / 16f;
  			int num5 = (int)((position.Y + (float)height) / 16f);
@@ -62,7 +62,7 @@
  
  			if (velocity.Y > 0f)
  				velocity.Y *= 0.5f;
-@@ -46349,11 +_,14 @@
+@@ -46350,11 +_,14 @@
  			int num8 = (int)(base.Center.Y / 16f);
  			_ = position.Y / 16f;
  			int num9 = (int)((position.Y + (float)height) / 16f);
@@ -77,7 +77,7 @@
  
  			if (velocity.Y > 0f)
  				velocity.Y *= 0.5f;
-@@ -46431,6 +_,8 @@
+@@ -46432,6 +_,8 @@
  	private float AI_061_FishingBobber_GetWaterLine(int X, int Y)
  	{
  		float result = position.Y + (float)height;
@@ -86,7 +86,7 @@
  		if (Main.tile[X, Y - 1] == null)
  			Main.tile[X, Y - 1] = new Tile();
  
-@@ -46439,6 +_,7 @@
+@@ -46440,6 +_,7 @@
  
  		if (Main.tile[X, Y + 1] == null)
  			Main.tile[X, Y + 1] = new Tile();
@@ -94,7 +94,7 @@
  
  		if (Main.tile[X, Y - 1].liquid > 0) {
  			result = Y * 16;
-@@ -65112,8 +_,11 @@
+@@ -65113,8 +_,11 @@
  
  				int num726 = (int)position.X / 16;
  				int num727 = (int)position.Y / 16;
